@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Fredoka+One|Titan+One&display=swap');
+.Dcontact{
+    font-family: 'Montserrat', sans-serif;
+    color: black;
+    background-color: whitesmoke;
+    width: 100%;
+    text-align: justify;
+    padding-left: 20%;
+    padding-right: 50%;
+}
+
+.ct{
+    font-size: large;
+    font-size: 60px;
+    font-family: 'Fredoka One', cursive;
+}
+
+.heart {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    left: 30%;
+    top: 412%;
+    transform: translate(-50%, -50%);
+    background: url(https://cssanimation.rocks/images/posts/steps/heart.png) no-repeat;
+    background-position: 0 0;
+    cursor: pointer;
+    animation: fave-heart 1s steps(28);
+  }
+  .heart:hover {
+    background-position: -2800px 0;
+    transition: background 1s steps(28);
+  }
+  @keyframes fave-heart {
+    0% {
+      background-position: 0 0;
+    }
+    100% {
+      background-position: -2800px 0;
+    }
+  }
+  

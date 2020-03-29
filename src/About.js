@@ -10,7 +10,7 @@ class About extends React.Component {
   render() {
     return (
       <div className="Dabout">
-      <div className="ab">About</div>
+      <div className="ab">About</div><br/>
       I am Tripathi Aditya Prakash, currently studying BCA at St.Xavier's College of Management and Technology,Patna.
       I am passionate student,always finding new technology to learn.Having experience with lot of technology i always bring something new to the table.
       Currently looking for interships and summertrainings.
@@ -18,6 +18,5 @@ class About extends React.Component {
       )
   }
 }
-
 
 export default About;
