@@ -16,8 +16,8 @@ class ProjectDetails extends React.Component {
           (result) => {
             this.setState({
               isLoaded: true,
-              info:result,
-            });
+              info:result.data,
+            })
           },
           (error) => {
             this.setState({

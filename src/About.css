@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Fredoka+One|Titan+One&display=swap');
+.Dabout{
+    font-family: 'Montserrat', sans-serif;
+    color: black;
+    background-color: whitesmoke;
+    width: 100%;
+    text-align: justify;
+    padding-left: 20%;
+    padding-right: 50%;
+}
+
+.ab{
+    font-size: large;
+    font-size: 100px;
+    font-family: 'Fredoka One', cursive;
+}
