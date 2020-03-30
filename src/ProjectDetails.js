@@ -1,9 +1,32 @@
 import React from 'react';
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemText from '@material-ui/core/ListItemText';
-import './ProjectDetails.css'
 
+import './ProjectDetails.css'
+import { withStyles } from '@material-ui/core/styles';
+import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import TableContainer from '@material-ui/core/TableContainer';
+import TableHead from '@material-ui/core/TableHead';
+import TableRow from '@material-ui/core/TableRow';
+
+
+const StyledTableCell = withStyles((theme) => ({
+  head: {
+    backgroundColor: theme.palette.common.black,
+    color: theme.palette.common.white,
+  },
+  body: {
+    fontSize: 14,
+  },
+}))(TableCell);
+
+const StyledTableRow = withStyles((theme) => ({
+  root: {
+    '&:nth-of-type(odd)': {
+      backgroundColor: theme.palette.background.default,
+    },
+  },
+}))(TableRow);
 class ProjectDetails extends React.Component {
     constructor(props) {
       super(props);
@@ -40,15 +63,26 @@ class ProjectDetails extends React.Component {
         return <div>Loading...</div>;
       } else {
         return (  
-      <List component="nav" aria-label="main mailbox folders" className="ListP">
-      {info.map(info => (
-        <ListItem dense selected autoFocus alignItems divider key={info.frok}>
-          <ListItemText className="ListI" primary={info.name} /> <br/><br/><br/>
-          <ListItemText className="ListI" primary={info.description} /> <br/><br/> <br/>
-          <ListItemText className="ListI" primary={info.html_url} /> <br/><br/><br/>
-        </ListItem>
-      ))}        
-      </List>
+      <TableContainer component="ProjectDetails">
+      <Table className="PTable" aria-label="customized table">
+        <TableHead>
+          <TableRow>
+            <StyledTableCell align="right">Project Name</StyledTableCell>
+            <StyledTableCell align="right">Project Description</StyledTableCell>
+            <StyledTableCell align="right">Project Link</StyledTableCell>
+          </TableRow>
+        </TableHead>
+        <TableBody>
+          {info.map((info) => (
+            <StyledTableRow key={info.fork}>
+              <StyledTableCell align="right">{info.name}</StyledTableCell>
+              <StyledTableCell align="right">{info.description}</StyledTableCell>
+              <StyledTableCell align="right">{info.html_url}</StyledTableCell>
+            </StyledTableRow>
+          ))}
+        </TableBody>
+      </Table>
+    </TableContainer>
         );
       }
     }
