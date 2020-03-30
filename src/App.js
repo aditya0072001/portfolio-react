@@ -19,7 +19,6 @@ function App() {
        <ProjectDetails></ProjectDetails>
        <About></About>
        <Contact></Contact>
-      
       </header>
     </div>
   );

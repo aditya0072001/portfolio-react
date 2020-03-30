@@ -1,4 +1,8 @@
 import React from 'react';
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemText from '@material-ui/core/ListItemText';
+import './ProjectDetails.css'
 
 class ProjectDetails extends React.Component {
     constructor(props) {
@@ -6,17 +10,17 @@ class ProjectDetails extends React.Component {
       this.state = {
         error: null,
         isLoaded: false,
-        info: [],
+        info: {}
       };
     }
-    ProjectDetails() {
+    componentDidMount() {
       fetch("https://api.github.com/users/aditya0072001/repos")
         .then(res => res.json())
         .then(
           (result) => {
             this.setState({
               isLoaded: true,
-              info:result.data,
+              info:result
             })
           },
           (error) => {
@@ -35,16 +39,18 @@ class ProjectDetails extends React.Component {
       } else if (!isLoaded) {
         return <div>Loading...</div>;
       } else {
-        return (
-          <ul>
-            {info.map(info => (
-              <li key={info.forks}>
-                {info.description} {info.html_url}
-              </li>
-            ))}
-          </ul>
+        return (  
+      <List component="nav" aria-label="main mailbox folders" className="ListP">
+      {info.map(info => (
+        <ListItem dense selected autoFocus alignItems divider key={info.frok}>
+          <ListItemText className="ListI" primary={info.name} /> <br/><br/><br/>
+          <ListItemText className="ListI" primary={info.description} /> <br/><br/> <br/>
+          <ListItemText className="ListI" primary={info.html_url} /> <br/><br/><br/>
+        </ListItem>
+      ))}        
+      </List>
         );
       }
     }
   }
-export default ProjectDetails
+export default ProjectDetails;
