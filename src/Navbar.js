@@ -4,9 +4,9 @@ function Navbar(){
  return(
     <div className="topnav">
     <a className="active" href="#home">Home</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
-    <a href="#about">About</a>
+    <a href="/ProjectsDetails">Projects</a>
+    <a href="/Contact">Contact</a>
+    <a href="/About">About</a>
     </div>
  );
 }
