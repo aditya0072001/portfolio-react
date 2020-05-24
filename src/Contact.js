@@ -13,11 +13,11 @@ class Contact extends React.Component {
       <div className="Dcontact">
       <br/>
       <div className="ct">Contact Me</div><br/>
-      Email:adityatripathi2001@outlook.com
+      <div className="lol">Email : adityatripathi2001@outlook.com</div>
       <br></br>
-      <code>Phone : +91 7667553607</code>
+      <div className="lol">Phone : +91-7667553607</div>
       <br/><br/>
-      <pre><code>Made with  <div className="heart"></div>   and React.js</code></pre>
+      <pre><code>Made with  <code className="heart"></code> and React.js</code></pre>
       </div>
       )
   }
